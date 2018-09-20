@@ -1,7 +1,9 @@
 //Solution goes in Sources
 
-extension Collection {
-    func accumulate<S, T>(_ input: S)-> [T] {
-        return []
+extension Array {
+    func accumulate<T>(_ input: (Element) -> T)-> [T] {
+        var acc = [T]()
+        for e in self { acc.append(input(e)) }
+        return acc
     }
 }
